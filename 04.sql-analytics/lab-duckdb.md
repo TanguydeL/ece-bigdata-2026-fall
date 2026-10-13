@@ -177,8 +177,11 @@ Questions:
 
 - The persistent secret is stored in a file of your home directory. What are the risks, and why are they limited on
   Onyxia?
+  The risk is that anyone who gains access to the file could steal your credentials and use them to access your data or services. However, this risk is limited on Onyxia because the credentials are stored in your personal home directory, which is not normally accessible to other users. In addition, you can renew your credentials through Onyxia, invalidating the old ones and reducing the impact of a leak.
+  
 - The secret is visible to any process running as your user. How would you restrict the access to S3 for a Kubernetes
   Job?
+  You can restrict S3 access for a Kubernetes Job by using a Kubernetes Secret to store the credentials and injecting them into the Job as environment variables. However, any process running inside the container could still access them.  
 
 ## Initialization file
 
